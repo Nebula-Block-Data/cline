@@ -184,7 +184,6 @@ describe("OpenApiInfoOptions", () => {
 	})
 })
 
-
 describe("OpenApiInfoOptions", () => {
 	const mockPostMessage = vi.fn()
 
