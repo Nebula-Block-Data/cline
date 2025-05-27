@@ -104,7 +104,6 @@ describe("ApiOptions Component - Together", () => {
 	})
 })
 
-// 插入到合适位置以重置模块
 vi.resetModules()
 
 describe("ApiOptions Component - Fireworks", () => {
