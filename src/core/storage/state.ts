@@ -156,6 +156,7 @@ export async function getAllExtensionState(context: vscode.ExtensionContext) {
 		reasoningEffort,
 		sambanovaApiKey,
 		nebulaBlockApiKey,
+		cerebrasApiKey,
 		nebiusApiKey,
 		planActSeparateModelsSettingRaw,
 		favoritedModelIds,
@@ -246,6 +247,7 @@ export async function getAllExtensionState(context: vscode.ExtensionContext) {
 		getGlobalState(context, "reasoningEffort") as Promise<string | undefined>,
 		getSecret(context, "sambanovaApiKey") as Promise<string | undefined>,
 		getSecret(context, "nebulaBlockApiKey") as Promise<string | undefined>,
+		getSecret(context, "cerebrasApiKey") as Promise<string | undefined>,
 		getSecret(context, "nebiusApiKey") as Promise<string | undefined>,
 		getGlobalState(context, "planActSeparateModelsSetting") as Promise<boolean | undefined>,
 		getGlobalState(context, "favoritedModelIds") as Promise<string[] | undefined>,
@@ -360,6 +362,7 @@ export async function getAllExtensionState(context: vscode.ExtensionContext) {
 			xaiApiKey,
 			sambanovaApiKey,
 			nebulaBlockApiKey,
+			cerebrasApiKey,
 			nebiusApiKey,
 			favoritedModelIds,
 			requestTimeoutMs,
@@ -455,6 +458,7 @@ export async function updateApiConfiguration(context: vscode.ExtensionContext, a
 		clineApiKey,
 		sambanovaApiKey,
 		nebulaBlockApiKey,
+		cerebrasApiKey,
 		nebiusApiKey,
 		favoritedModelIds,
 	} = apiConfiguration
@@ -517,6 +521,7 @@ export async function updateApiConfiguration(context: vscode.ExtensionContext, a
 	await storeSecret(context, "clineApiKey", clineApiKey)
 	await storeSecret(context, "sambanovaApiKey", sambanovaApiKey)
 	await storeSecret(context, "nebulaBlockApiKey", nebulaBlockApiKey)
+	await storeSecret(context, "cerebrasApiKey", cerebrasApiKey)
 	await storeSecret(context, "nebiusApiKey", nebiusApiKey)
 	await updateGlobalState(context, "favoritedModelIds", favoritedModelIds)
 	await updateGlobalState(context, "requestTimeoutMs", apiConfiguration.requestTimeoutMs)
@@ -548,6 +553,7 @@ export async function resetExtensionState(context: vscode.ExtensionContext) {
 		"xaiApiKey",
 		"sambanovaApiKey",
 		"nebulaBlockApiKey",
+		"cerebrasApiKey",
 		"nebiusApiKey",
 	]
 	for (const key of secretKeys) {

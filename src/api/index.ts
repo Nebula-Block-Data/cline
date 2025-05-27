@@ -25,6 +25,8 @@ import { AskSageHandler } from "./providers/asksage"
 import { XAIHandler } from "./providers/xai"
 import { SambanovaHandler } from "./providers/sambanova"
 import { NebulaBlockHandler } from "./providers/nebula-block"
+import { CerebrasHandler } from "./providers/cerebras"
+
 
 export interface ApiHandler {
 	createMessage(systemPrompt: string, messages: Anthropic.Messages.MessageParam[]): ApiStream
@@ -87,6 +89,8 @@ export function buildApiHandler(configuration: ApiConfiguration): ApiHandler {
 			return new SambanovaHandler(options)
 		case "nebula-block":
 			return new NebulaBlockHandler(options)
+		case "cerebras":
+			return new CerebrasHandler(options)
 		default:
 			return new AnthropicHandler(options)
 	}
