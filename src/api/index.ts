@@ -27,7 +27,6 @@ import { SambanovaHandler } from "./providers/sambanova"
 import { NebulaBlockHandler } from "./providers/nebula-block"
 import { CerebrasHandler } from "./providers/cerebras"
 
-
 export interface ApiHandler {
 	createMessage(systemPrompt: string, messages: Anthropic.Messages.MessageParam[]): ApiStream
 	getModel(): { id: string; info: ModelInfo }
