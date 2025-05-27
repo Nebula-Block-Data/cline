@@ -155,3 +155,5 @@ describe("OpenApiInfoOptions", () => {
 		expect(modelInput).toBeInTheDocument()
 	})
 })
+
+// Last updated
