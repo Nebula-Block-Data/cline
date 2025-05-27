@@ -104,8 +104,6 @@ describe("ApiOptions Component - Together", () => {
 	})
 })
 
-vi.resetModules()
-
 describe("ApiOptions Component - Fireworks", () => {
 	vi.clearAllMocks()
 	const mockPostMessage = vi.fn()
